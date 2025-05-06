@@ -1,12 +1,8 @@
-Perfect! Here's the updated **README** content with **code examples for each formatter**, making it developer-friendly and IDE-doc ready:
-
----
 
 ## ✨ TextInputFormatters Included
 
 A collection of custom `TextInputFormatter`s designed to enhance and control user input in Flutter apps.
 
----
 
 ### 🔠 **Typing Delay Formatter**
 
@@ -186,11 +182,3 @@ TextField(
 
 **Input:** `hello   world` → **Output:** `hello world`
 
----
-
-Let me know if you want me to generate:
-- `lib/formatters.dart` export file
-- pubspec.yaml structure
-- or a live preview app to test all formatters
-
-Would you like the export file next?
