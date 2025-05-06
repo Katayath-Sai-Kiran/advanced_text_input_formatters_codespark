@@ -2,7 +2,7 @@ import 'package:flutter/services.dart';
 
 /// Prevents multiple consecutive spaces.
 /// Converts "hello   world" → "hello world"
-/// 
+///
 /// Example:
 /// ```dart
 /// TextField(inputFormatters: [NoMultipleSpacesFormatter()])

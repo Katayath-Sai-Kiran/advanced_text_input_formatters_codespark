@@ -1,6 +1,6 @@
 name: advanced_text_input_formatters_codespark
 description: A Flutter package with advanced custom TextInputFormatters—simulate typing, block clipboard, allow only palindromes, enforce naming conventions and more.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/Katayath-Sai-Kiran/advanced_text_input_formatters_codespark
 repository: https://github.com/Katayath-Sai-Kiran/advanced_text_input_formatters_codespark
 
@@ -18,4 +18,12 @@ dev_dependencies:
   flutter_lints: ^3.0.1
 
 flutter:
-  # No assets or fonts yet
+  assets:
+   - "assets/"
+
+topics:
+  - textinput
+  - inputformatter
+  - validation
+  - typing
+  - formatting

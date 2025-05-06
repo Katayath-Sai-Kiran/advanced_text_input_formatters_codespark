@@ -2,7 +2,7 @@ import 'package:flutter/services.dart';
 
 /// Replaces all whitespace with underscores.
 /// Converts "this is text" → "this_is_text"
-/// 
+///
 /// Example:
 /// ```dart
 /// TextField(inputFormatters: [WhitespaceToUnderscoreFormatter()])

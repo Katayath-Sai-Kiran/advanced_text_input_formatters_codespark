@@ -2,7 +2,7 @@ import 'package:flutter/services.dart';
 
 /// Formats input into CamelCase.
 /// Converts "hello world" → "helloWorld"
-/// 
+///
 /// Example:
 /// ```dart
 /// TextField(inputFormatters: [CamelCaseFormatter()])
@@ -12,7 +12,16 @@ class CamelCaseFormatter extends TextInputFormatter {
     final words = input.split(RegExp(r'\s+'));
     if (words.isEmpty) return '';
     final first = words.first.toLowerCase();
-    final rest = words.skip(1).map((w) => w.isNotEmpty ? w[0].toUpperCase() + w.substring(1).toLowerCase() : '').join();
+    final rest =
+        words
+            .skip(1)
+            .map(
+              (w) =>
+                  w.isNotEmpty
+                      ? w[0].toUpperCase() + w.substring(1).toLowerCase()
+                      : '',
+            )
+            .join();
     return first + rest;
   }
 

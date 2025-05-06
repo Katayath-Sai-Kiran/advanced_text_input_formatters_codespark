@@ -11,5 +11,4 @@ export 'formatters/replace_whitespace_with_underscore_formatter.dart';
 export 'formatters/prevent_multiple_spaces_formatter.dart';
 export 'controllers/typing_delay_controller.dart';
 
-
 // add more here as you build

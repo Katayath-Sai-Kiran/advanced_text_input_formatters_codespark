@@ -1,9 +1,17 @@
 
 
 ```markdown
-# Changelog
 
-All notable changes to this project will be documented in this file.
+## [0.0.2] - 2025-05-04
+
+### Added
+- 🎯 Package banner added: Helps improve visibility on pub.dev.
+- 🧹 Code formatting applied: Ensures consistency, readability, and best practices.
+- 🔖 Topics (hashtags) added to pubspec.yaml:
+  - Improves discoverability on pub.dev by helping developers find the package via relevant keywords.
+
+### Notes
+This update focuses on improving package presentation, discoverability, and internal structure without adding or changing any core functionality.
 
 ## [0.0.1] - Initial Release
 

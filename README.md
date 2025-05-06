@@ -1,4 +1,6 @@
 
+<img src="https://raw.githubusercontent.com/Katayath-Sai-Kiran/advanced_text_input_formatters_codespark/main/assets/banner.png" alt="Banner"/>
+
 ## ✨ TextInputFormatters Included
 
 A collection of custom `TextInputFormatter`s designed to enhance and control user input in Flutter apps.
