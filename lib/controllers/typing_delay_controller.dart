@@ -34,7 +34,7 @@ class TypingDelayController extends TextEditingController {
   final Duration delay;
 
   /// Internal buffer to hold the text that will be typed.
-  String _pendingText = '';
+  String pendingText = '';
 
   /// A flag to indicate if the controller is currently simulating typing.
   bool _isTyping = false;
@@ -46,7 +46,7 @@ class TypingDelayController extends TextEditingController {
   @override
   set text(String newText) {
     // For programmatic updates, just set text immediately
-    _pendingText = newText;
+    pendingText = newText;
     super.text = newText;
   }
 
@@ -58,7 +58,7 @@ class TypingDelayController extends TextEditingController {
     if (_isTyping) return;
     _isTyping = true;
 
-    _pendingText = newText;
+    pendingText = newText;
     String current = '';
 
     for (int i = 0; i < newText.length; i++) {
