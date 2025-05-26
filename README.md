@@ -1,5 +1,5 @@
 
-<img src="https://raw.githubusercontent.com/Katayath-Sai-Kiran/advanced_text_input_formatters_codespark/main/assets/banner.png" alt="Banner"/>
+<img src="https://raw.githubusercontent.com/Katayath-Sai-Kiran/advanced_text_input_formatters_codespark/master/assets/banner.png" alt="Banner"/>
 
 ## ✨ TextInputFormatters Included
 
@@ -183,4 +183,9 @@ TextField(
 ```
 
 **Input:** `hello   world` → **Output:** `hello world`
+
+## 👨‍💻 Maintainer
+
+Developed with 💙 by [Katayath Sai Kiran](https://github.com/Katayath-Sai-Kiran)
+📬 Feel free to contribute or suggest improvements!
 

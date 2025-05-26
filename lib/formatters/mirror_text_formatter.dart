@@ -1,17 +1,23 @@
 import 'package:flutter/services.dart';
 
-/// Reverses the input text in real-time.
-/// Typing "hello" shows "olleh".
 class MirrorTextFormatter extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(
     TextEditingValue oldValue,
     TextEditingValue newValue,
   ) {
-    final reversed = newValue.text.split('').reversed.join();
-    return TextEditingValue(
-      text: reversed,
-      selection: TextSelection.collapsed(offset: reversed.length),
+    // If the new value is empty, return the old value
+    if (newValue.text.isEmpty) {
+      return newValue;
+    }
+
+    // Get the last character of the new value
+    String newText = newValue.text[newValue.text.length - 1] + oldValue.text;
+
+    // Return the updated TextEditingValue with the mirrored text
+    return newValue.copyWith(
+      text: newText,
+      selection: TextSelection.collapsed(offset: newText.length),
     );
   }
 }
