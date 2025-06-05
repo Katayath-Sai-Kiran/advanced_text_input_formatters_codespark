@@ -7,6 +7,7 @@ import 'package:advanced_text_input_formatters_codespark/formatters/no_paste_for
 import 'package:advanced_text_input_formatters_codespark/formatters/no_repeat_characters_formatter.dart';
 import 'package:advanced_text_input_formatters_codespark/formatters/only_alphabets_formatter.dart';
 import 'package:advanced_text_input_formatters_codespark/formatters/palindrome_only_formatter.dart';
+import 'package:advanced_text_input_formatters_codespark/formatters/pan_card_formatter.dart';
 import 'package:advanced_text_input_formatters_codespark/formatters/prevent_multiple_spaces_formatter.dart';
 import 'package:advanced_text_input_formatters_codespark/formatters/replace_whitespace_with_underscore_formatter.dart';
 import 'package:advanced_text_input_formatters_codespark/formatters/snake_case_formatter.dart';
@@ -31,57 +32,69 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class FormatterDemo extends StatelessWidget {
+class FormatterDemo extends StatefulWidget {
   const FormatterDemo({super.key});
 
   @override
+  State<FormatterDemo> createState() => _FormatterDemoState();
+}
+
+class _FormatterDemoState extends State<FormatterDemo> {
+  final TextEditingController _controller = TextEditingController();
+  final typingController = TypingDelayController();
+
+  @override
   Widget build(BuildContext context) {
-    final typingController = TypingDelayController();
+    final keyboardType = PanCardInputHelper.getKeyboardType(_controller.text);
     return ListView(
       children: [
+        const SizedBox(height: 20),
+        const Text('Pan Card Formatter'),
+        TextFormField(
+          key: ValueKey(keyboardType), // Rebuild on type change
+          controller: _controller,
+          decoration: const InputDecoration(
+            labelText: 'Enter PAN Card Number',
+            border: OutlineInputBorder(),
+          ),
+          autofocus: true,
+          keyboardType: keyboardType,
+          inputFormatters: [PanCardInputHelper.formatter],
+          validator: (val) => PanCardInputHelper.validate(val ?? ''),
+          onChanged: (value) => setState(() {}),
+        ),
         const Text('Digits Only'),
         TextField(inputFormatters: [DigitsOnlyFormatter()]),
-
         const SizedBox(height: 20),
         const Text('Input Mirror'),
         TextField(inputFormatters: [MirrorTextFormatter()]),
-
         const SizedBox(height: 20),
         const Text('Prevent Repeat Characters'),
         TextField(inputFormatters: [NoRepeatCharactersFormatter()]),
-
         const SizedBox(height: 20),
         const Text('Block Clipboard (no paste)'),
         TextField(inputFormatters: [NoPasteFormatter()]),
-
         const SizedBox(height: 20),
         const Text('Only Palindromes'),
         TextField(inputFormatters: [PalindromeOnlyFormatter()]),
-
         const SizedBox(height: 20),
         const Text('Only Alphabets'),
         TextField(inputFormatters: [OnlyAlphabetsFormatter()]),
-
         const SizedBox(height: 20),
         const Text('CamelCase'),
         TextField(inputFormatters: [CamelCaseFormatter()]),
-
         const SizedBox(height: 20),
         const Text('snake_case'),
         TextField(inputFormatters: [SnakeCaseFormatter()]),
-
         const SizedBox(height: 20),
         const Text('kebab-case'),
         TextField(inputFormatters: [KebabCaseFormatter()]),
-
         const SizedBox(height: 20),
         const Text('Whitespace → Underscores'),
         TextField(inputFormatters: [WhitespaceToUnderscoreFormatter()]),
-
         const SizedBox(height: 20),
         const Text('Prevent multiple spaces'),
         TextField(inputFormatters: [NoMultipleSpacesFormatter()]),
-
         const SizedBox(height: 20),
         const Text('Typing Delay (simulated typing)'),
         TextField(
